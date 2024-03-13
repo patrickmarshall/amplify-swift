@@ -31,7 +31,7 @@ extension AWSS3StorageService {
         }
         let input = ListObjectsV2Input(bucket: bucket,
                                        continuationToken: options.nextToken,
-                                       delimiter: nil,
+                                       delimiter: options.delimiter,
                                        maxKeys: Int(options.pageSize),
                                        prefix: finalPrefix,
                                        startAfter: nil)

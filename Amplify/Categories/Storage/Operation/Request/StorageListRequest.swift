@@ -44,6 +44,11 @@ public extension StorageListRequest {
         /// - Tag: StorageListRequestOptions.path
         public let path: String?
 
+        /// Delimiter used to group keys
+        ///
+        /// - Tag: StorageListRequestOptions.delimiter
+        public let delimiter: String?
+
         /// Number between 1 and 1,000 that indicates the limit of how many entries to fetch when
         /// retreiving file lists from the server.
         ///
@@ -78,12 +83,14 @@ public extension StorageListRequest {
         public init(accessLevel: StorageAccessLevel = .guest,
                     targetIdentityId: String? = nil,
                     path: String? = nil,
+                    delimiter: String? = nil,
                     pageSize: UInt = 1000,
                     nextToken: String? = nil,
                     pluginOptions: Any? = nil) {
             self.accessLevel = accessLevel
             self.targetIdentityId = targetIdentityId
             self.path = path
+            self.delimiter = delimiter
             self.pageSize = pageSize
             self.nextToken = nextToken
             self.pluginOptions = pluginOptions
